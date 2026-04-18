@@ -1,9 +1,18 @@
 # Expense Tracker
 
-A simple Python project to track daily expenses and visualize spending patterns.
+A Python-based expense tracking application that helps users manage and analyze their daily spending.
 
 ## Features
-- Add expenses
-- Store data in CSV
-- View total spending
-- Category-wise analysis
+- Add expenses with date, amount, and category
+- Store data in CSV format
+- Calculate total expenses
+- Visualize category-wise spending using graphs
+
+## Tech Stack
+- Python
+- CSV
+- Matplotlib
+
+## How to Run
+1. Run main.py
+2. Choose options from menu
