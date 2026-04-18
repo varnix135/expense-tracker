@@ -25,7 +25,8 @@ def view_total():
 while True:
     print("\n1. Add Expense")
     print("2. View Total")
-    print("3. Exit")
+    print("3. Show Category Chart")
+    print("4. Exit") 
 
     choice = input("Enter choice: ")
 
@@ -34,6 +35,34 @@ while True:
     elif choice == "2":
         view_total()
     elif choice == "3":
+         show_category_chart()
+elif choice == "4":
         break
     else:
         print("Invalid choice")
+import matplotlib.pyplot as plt
+
+def show_category_chart():
+    data = {}
+    try:
+        with open("data.csv", "r") as file:
+            reader = csv.reader(file)
+            for row in reader:
+                category = row[2]
+                amount = float(row[1])
+                if category in data:
+                    data[category] += amount
+                else:
+                    data[category] = amount
+
+        categories = list(data.keys())
+        amounts = list(data.values())
+
+        plt.bar(categories, amounts)
+        plt.xlabel("Category")
+        plt.ylabel("Amount")
+        plt.title("Expenses by Category")
+        plt.show()
+
+    except:
+        print("No data to display.")
