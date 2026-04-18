@@ -26,7 +26,7 @@ while True:
     print("\n1. Add Expense")
     print("2. View Total")
     print("3. Show Category Chart")
-    print("4. Exit") 
+    print("4. Exit")
 
     choice = input("Enter choice: ")
 
@@ -35,8 +35,8 @@ while True:
     elif choice == "2":
         view_total()
     elif choice == "3":
-         show_category_chart()
-elif choice == "4":
+        show_category_chart()
+    elif choice == "4":
         break
     else:
         print("Invalid choice")
