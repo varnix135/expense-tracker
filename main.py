@@ -17,9 +17,16 @@ def view_total():
         with open("data.csv", "r") as file:
             reader = csv.reader(file)
             for row in reader:
-                total += float(row[1])
+                if len(row) < 2:
+                    continue
+                try:
+                    total += float(row[1])
+                except:
+                    continue
+
         print("Total expense:", total)
-    except:
+
+    except FileNotFoundError:
         print("No data found.")
 
 while True:
