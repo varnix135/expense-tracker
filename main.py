@@ -28,7 +28,26 @@ def view_total():
 
     except FileNotFoundError:
         print("No data found.")
- import matplotlib.pyplot as plt
+
+while True:
+    print("\n1. Add Expense")
+    print("2. View Total")
+    print("3. Show Category Chart")
+    print("4. Exit")
+
+    choice = input("Enter choice: ")
+
+    if choice == "1":
+        add_expense()
+    elif choice == "2":
+        view_total()
+    elif choice == "3":
+        show_category_chart()
+    elif choice == "4":
+        break
+    else:
+        print("Invalid choice")
+         import matplotlib.pyplot as plt
 
 def show_category_chart():
     data = {}
@@ -54,23 +73,3 @@ def show_category_chart():
 
     except:
         print("No data to display.")
-
-
-while True:
-    print("\n1. Add Expense")
-    print("2. View Total")
-    print("3. Show Category Chart")
-    print("4. Exit")
-
-    choice = input("Enter choice: ")
-
-    if choice == "1":
-        add_expense()
-    elif choice == "2":
-        view_total()
-    elif choice == "3":
-        show_category_chart()
-    elif choice == "4":
-        break
-    else:
-        print("Invalid choice")
